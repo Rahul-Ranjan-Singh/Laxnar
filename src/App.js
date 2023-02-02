@@ -8,8 +8,8 @@ import ContactHeader from "./Components/ContactHeader";
 function App() {
     return (
         <div className='App'>
-            <Footer/>
-            <ContactHeader/>
+            <Footer />
+            <ContactHeader />
         </div>
     );
 }
