@@ -28,11 +28,11 @@ const GetcallForm = () => {
       <div className=" bg-white py-4 px-8 flex flex-col mx-auto space-y-2">
         <div className="w-full flex space-x-2">
           <div className="flex-1">
-            <label className="leading-7 text-sm text-gray-600" for="Product">
+            <label className="leading-7 text-sm text-white" for="Product">
               Product
             </label>
             <input
-              className="w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              className="w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 text-base outline-none text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               id="Product"
               type={productDetails.product}
               onChange={handleChange}
@@ -41,11 +41,11 @@ const GetcallForm = () => {
             />
           </div>
           <div className="flex-1">
-            <label className="leading-7 text-sm text-gray-600" for="Name">
+            <label className="leading-7 text-sm text-white" for="Name">
               Name
             </label>
             <input
-              className="w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              className="w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 text-base outline-none text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               id="Name"
               type="text"
               value={productDetails.name}
@@ -61,7 +61,7 @@ const GetcallForm = () => {
               Email
             </label>
             <input
-              className="w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              className="w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 text-base outline-none text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               id="username"
               type="email"
               value={productDetails.email}
@@ -75,7 +75,7 @@ const GetcallForm = () => {
               Phone
             </label>
             <input
-              className="w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              className="w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 text-base outline-none text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               id="phone"
               value={productDetails.phone}
               onChange={handleChange}
@@ -86,7 +86,7 @@ const GetcallForm = () => {
           </div>
         </div>
         <div className="w-full  flex flex-col ">
-          <label className="leading-7 text-sm text-gray-600" for="username">
+          <label className="leading-7 text-sm text-white" for="username">
             Message
           </label>
           <LimitedTextarea
@@ -101,7 +101,7 @@ const GetcallForm = () => {
         </div>
         <div className="w-full flex items-center justify-center">
           <button
-            className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+            className="flex mx-auto text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg"
             type="button"
           >
             Sign In

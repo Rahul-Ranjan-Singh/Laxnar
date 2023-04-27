@@ -75,7 +75,7 @@ export const HomeCarousalbt = () => {
                   />
                 </div>
                 <div className="px-7 bottom flex flex-col justify-center items-start p-3">
-                  <div className="title font-semibold text-gray-300 text-lg my-1">
+                  <div className="title font-semibold text-white text-lg my-1">
                     {CardData.title}
                   </div>
                   <div className="my-2">
