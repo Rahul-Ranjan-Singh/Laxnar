@@ -13,45 +13,32 @@ const ProductDetailPage = () => {
 
   const [product, setProduct] = useState([]);
   // const [isLoading, setIsLoading] = useState(false);
+  const [sigleProduct ,setSingleProduct] = useState({});
 
-
-
-
-      // setIsLoading(false);
-
-
-      console.log("iiiiii")
-
-        fetch("http://localhost:4000/api/product/get-product/643a350a6129b3c72d334a2d", {
-          // mode: 'no-cors',
-          method: "GET",
-          
+     const fetchProducts =  () => {
+        fetch(`https://laxnar-lko.onrender.com/api/product/get-product/${id}`)
+        .then(response => {
+          return response.json()
         })
+        .then(data => {
+          
+          console.log(data)
 
-        fetch("http://localhost:4000/api/product/get-product/643a350a6129b3c72d334a2d")
-      .then(response => {
-        return response.json()
-      })
-      .then(data => {
-        setProduct(data.data[0]);
-        console.log(product)
-      }).catch((err)=> console.log(err))
+          setSingleProduct(data.data[0]);
+          
+          
+        }).catch((err)=> console.log(err))
+     }
 
-    
-  
-
-    console.log(id);
-
-  
-    
-
-
+    useEffect(() => {
+      fetchProducts();
+    }, []);
 
   const openGetCallPage = () => {
     history.push("/getcall");
   };
 
-
+  
 
 
   const productTabs = {
@@ -131,15 +118,16 @@ const ProductDetailPage = () => {
           {/* <ParticlesComponent className="" /> */}
           <img
             className="h-full hidden md:block "
-            src="https://arkel.b-cdn.net/Content/Images/bg-03.png"
-            alt=""
+            src={sigleProduct.image[0]}
+            alt={sigleProduct.name}
           ></img>
           <img
             className="h-full hidden md:block max-lg:hidden"
-            src="https://arkel.b-cdn.net/Content/Images/bg-02.png"
-            alt=""
+            src={sigleProduct.image[0]}
+            alt={sigleProduct.name}
           ></img>
         </div>
+        {console.log(sigleProduct)}
         <div className="flex max-sm:flex-col-reverse max-sm:w-1/2 justify-around absolute w-3/4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
           <div className="relative max-sm:w-full w-1/2 ">
             <img
@@ -149,20 +137,20 @@ const ProductDetailPage = () => {
             ></img>
             <img
               className="h-80 absolute top-0 left-1/3 max-sm:left-1/2 -translate-x-1/2 object-cover"
-              src={product[0].image[0]}
-              alt={product[0].name}
+              src=""
+              alt="alt"
             ></img>
           </div>
 
           <div className="flex-col w-1/3 max-sm:w-full max-sm:justify-center">
             <div className="text-sky-600 font-bold text-5xl max-sm:w-full max-sm:text-center">
-              {product[0].name}
+              {sigleProduct.name}
             </div>
             <div className="font-semibold text-xl mt-4 mb-8 text-gray-700 max-sm:w-full max-sm:text-center">
-              {product[0].category}
+            {sigleProduct.category}
             </div>
             <div className="mb-6 max-sm:w-full max-sm:text-center">
-              {product[0].description}
+            {sigleProduct.description}
             </div>
             <div className="max-sm:flex max-sm:justify-center max-sm:mb-8">
               <span

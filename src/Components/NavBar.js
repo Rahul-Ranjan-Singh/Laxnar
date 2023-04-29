@@ -17,12 +17,13 @@ const NavBar = () => {
 
   function NavDropDown() {
     return (
-      <div>
+      <div className="mt-16">
         <ol class="border border-gray-800 absolute w-full bg-gray-900 p-3 shadow-lg rounded-b-2xl z-20">
           {links.map((link) => (
             <li>
               <NavLink
                 className="h-11 px-5 w-full rounded-lg align-middle  border hover:bg-blue-700  text-white border-gray-900 left-0 font-medium mt-1  py-1 flex justify-between p-4"
+                onClick={()=>setShowDropDown(!showDropDown)}
                 to={link.to}
               >
                 {link.label}

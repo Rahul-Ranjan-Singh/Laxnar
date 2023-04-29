@@ -9,6 +9,7 @@ import React from "react";
 import Footer from "./Components/Footer";
 import AboutUsPage from "./Pages/AboutUsPage";
 import ProductDetailPage from "./Pages/ProductDetailPage";
+import ProductDetail from "./Pages/ProductDetail";
 import GetCallPage from "./Pages/GetCallPage";
 import Dashboard from "./Pages/DashBoard/pages/Dashboard";
 
@@ -38,8 +39,8 @@ function App() {
               <Route path="/product">
                 <ProductPage />
               </Route>
-              <Route path="/productdetail/:id">
-                <ProductDetailPage />
+              <Route path="/productdetails/:id">
+                <ProductDetail />
               </Route>
               <Route path="/getcall">
                 <GetCallPage />
