@@ -2,7 +2,7 @@ import { Fragment, useState } from "react";
 import { NavLink } from "react-router-dom";
 import HamBurger from "../Icons/HamBurger";
 import { BsSearch } from "react-icons/bs";
-import logo from "../Images/laxnar_logo.png";
+import logo from "../Images/laxnar_logo.jpg";
 
 const links = [
   { to: "/", label: "Home" },
@@ -97,12 +97,9 @@ const NavBar = () => {
 
       <nav class="bg-gray-900 fixed w-full z-20 top-0 left-0 border-b  border-gray-600">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a class="flex items-center">
+          <NavLink to="/">
             <img src={logo} className="h-8 mr-3" alt="Flowbite Logo" />
-            <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">
-              LAXNAR
-            </span>
-          </a>
+          </NavLink>
           <div class="flex md:order-2">
             <button
               type="button"

@@ -3,7 +3,7 @@ import { BsHeadset, BsWrench } from "react-icons/bs";
 
 const AllServices = () => {
   return (
-    <div className="flex p-10 text-white flex-col sm:flex-row  sm:mb-10">
+    <div className="flex p-5 text-white flex-col sm:flex-row  sm:mb-10">
       <div className="basis-1/3 space-y-2 mb-5">
         <h1 className="text-3xl  font-bold">Our Services</h1>
         <p className="text-justify text-sm">
@@ -32,7 +32,7 @@ const AllServices = () => {
         </p>
       </div>
 
-      <div className="basis-2/3 flex px-10 pt-12 space-x-5">
+      <div className="basis-2/3 flex px-5 pt-12 space-x-5">
         <div className="rounded-lg  shadow-black shadow-sm text-whitetext-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 h-1/2 p-3">
           <div className="flex justify-center mb-5">
             <BsHeadset size={40} />
