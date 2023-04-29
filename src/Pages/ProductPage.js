@@ -40,6 +40,16 @@ const Productpage = () => {
         .then((response) => response.json())
         .then((result) => {setCategory(result.data); console.log(result.data); setIfCategoryLoading(false)})
         .catch((error) => console.log("error", error));
+
+
+        fetch("https://laxnar-lko.onrender.com/api/product/get-product/643a350a6129b3c72d334a2d", {
+          // mode: 'no-cors',
+          method: "GET",
+          
+        })
+          .then((response) => response.json())
+          .then((result) => { console.log("iii"); console.log(result.data);})
+          .catch((error) => console.log("error", error));
   };
 
   useEffect(() => {
@@ -79,7 +89,7 @@ const Productpage = () => {
           
         </div>
         
-        <div className="grid grid-cols-2 max-sm:grid-cols-1 md:grid-cols-3 gap-4 flex-1 m-4 drop-shadow-2xl w-1/2 bg-white bg-gray-800 p-10 rounded-lg">
+        <div className="grid grid-cols-1 sm:grid-cols-1 max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 flex-1 m-4 drop-shadow-2xl w-1/2 bg-white bg-gray-800 p-10 rounded-lg">
         { isLoading?
           <div className="mx-auto h-full w-full items-center flex justify-center align-middle ">
             <svg aria-hidden="true" role="status" class="inline w-8 h-8 mr-3 text-white animate-spin" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -89,7 +99,7 @@ const Productpage = () => {
           </div> 
           :
           products.map((product) => (
-            <Link key={product._id} to={`/productdetail/${product._id}`}>
+            <Link key={product._id} to={`/productdetails/${product._id}`}>
               <ProductCard product={product} />
             </Link>
           ))
