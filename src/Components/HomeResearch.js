@@ -3,7 +3,7 @@ import Research from "../Images/Research.png";
 
 const HomeResearch = () => {
   return (
-    <div className="flex-col sm:flex-row items-center inline-flex p-5 my-10">
+    <div className="flex-col bg-gray-700 sm:flex-row items-center inline-flex p-5 mt-1">
       <div className="flex-1 mb-5 px-3">
         <div className="mb-5">
           <h1 className="text-5xl text-white">Research and Development</h1>
