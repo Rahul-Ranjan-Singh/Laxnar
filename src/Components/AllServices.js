@@ -3,7 +3,7 @@ import { BsHeadset, BsWrench } from "react-icons/bs";
 
 const AllServices = () => {
   return (
-    <div className="flex p-5 text-white flex-col sm:flex-row  sm:mb-10">
+    <div className="flex p-5 text-white flex-col sm:flex-row   bg-gray-700">
       <div className="basis-1/3 space-y-2 mb-5">
         <h1 className="text-3xl  font-bold">Our Services</h1>
         <p className="text-justify text-sm">

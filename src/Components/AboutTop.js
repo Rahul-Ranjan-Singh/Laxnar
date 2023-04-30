@@ -34,7 +34,7 @@ const AboutTop = () => {
           {Read}
         </button>
       </div>
-      <div className="p-5 mx-5 sm:w-1/3 invisible w-0  sm:visible">
+      <div className="p-5 ">
         <div>
           <img className="rounded-full " src={aboutus} alt="aboutus" />
         </div>
