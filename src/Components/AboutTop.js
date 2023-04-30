@@ -26,7 +26,7 @@ const AboutTop = () => {
         </p>
         <p className="text-justify">{readMore}</p>
         <button
-          className="bg-red-500  px-2 py-1 text-white rounded-lg"
+          className="bg-red-500 px-2 py-1 text-white rounded-lg"
           onClick={() => {
             addContent(Read);
           }}
