@@ -36,7 +36,7 @@ function HomeCarousal() {
   };
 
   return (
-    <div className="h-full w-full m-auto  relative group">
+    <div className=" h-full w-full m-auto  relative group">
       <div>
         <img
           className="h-full w-full "
