@@ -108,8 +108,9 @@ const ProductDetail = () => {
                                     </div>
 
 
-
+                                    
                                     <div className='flex mt-10'>
+                                    <a href="https://docs.google.com/document/d/1X2lC1f6Atbp0-MfoV79BTqPAr4EpYaOZ/edit?usp=share_link&ouid=101730540961865689255&rtpof=true&sd=true">
                                         <button class=" flex align-middle items-center text-white bg-red-600 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">
                                             <span class="relative top-0 left-0 flex h-3 w-3 mr-2">
                                                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -117,8 +118,9 @@ const ProductDetail = () => {
                                             </span>
                                             Download Brochure Now
                                         </button>
+                                    </a>
 
-                                        <button class="flex ml-5 text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">Get Call Now</button>
+                                        <button onClick={openGetCallPage} class="flex ml-5 text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">Get Call Now</button>
 
 
                                     </div>
