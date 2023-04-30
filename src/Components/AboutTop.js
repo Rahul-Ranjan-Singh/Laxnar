@@ -20,7 +20,7 @@ const AboutTop = () => {
   };
   return (
     <div className="flex-col sm:flex-row items-center inline-flex  text-black bg-white">
-      <div className="p-5 mx-5 flex-initial w-2/3">
+      <div className="p-3 flex-initial w-2/3">
         <p className="text-3xl sm:text-5xl w-auto font-bold my-5 text-red-500">
           About Us
         </p>
