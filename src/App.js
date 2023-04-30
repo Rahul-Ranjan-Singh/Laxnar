@@ -12,6 +12,7 @@ import ProductDetailPage from "./Pages/ProductDetailPage";
 import ProductDetail from "./Pages/ProductDetail";
 import GetCallPage from "./Pages/GetCallPage";
 import Dashboard from "./Pages/DashBoard/pages/Dashboard";
+import AdminLogin from "./Pages/AdminLogin";
 
 function App() {
   return (
@@ -44,6 +45,9 @@ function App() {
               </Route>
               <Route path="/getcall">
                 <GetCallPage />
+              </Route>
+              <Route path="/adminlogin">
+                <AdminLogin />
               </Route>
             </div>
           </div>

@@ -3,10 +3,8 @@ import { NavLink } from "react-router-dom";
 import HamBurger from "../Icons/HamBurger";
 import { BsSearch } from "react-icons/bs";
 
-
 import { Link } from "react-router-dom";
 import logo from "../Images/laxnar_logo.jpg";
-
 
 const links = [
   { to: "/", label: "Home" },
@@ -27,7 +25,7 @@ const NavBar = () => {
             <li>
               <NavLink
                 className="h-11 px-5 w-full rounded-lg align-middle  border hover:bg-blue-700  text-white border-gray-900 left-0 font-medium mt-1  py-1 flex justify-between p-4"
-                onClick={()=>setShowDropDown(!showDropDown)}
+                onClick={() => setShowDropDown(!showDropDown)}
                 to={link.to}
               >
                 {link.label}
@@ -106,14 +104,14 @@ const NavBar = () => {
             <img src={logo} className="h-8 mr-3" alt="Flowbite Logo" />
           </NavLink>
           <div class="flex md:order-2">
-          <Link to={`/admin}`}>
-            <button
-              type="button"
-              class="text-white   focus:outline-none  font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 bg-red-600 hover:bg-red-700 focus:ring-red-800"
-            >
-              Admin Login
-            </button>
-            </Link>
+            <NavLink to="/adminlogin">
+              <button
+                type="button"
+                class="text-white   focus:outline-none  font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 bg-red-600 hover:bg-red-700 focus:ring-red-800"
+              >
+                Admin Login
+              </button>
+            </NavLink>
             <button
               onClick={() => setShowDropDown(!showDropDown)}
               data-collapse-toggle="navbar-sticky"
