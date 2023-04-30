@@ -33,13 +33,13 @@ export const HomeCarousalbt = () => {
 
   const scrollLeft = () => {
     if (myRef.current != null) {
-      myRef.current.scrollLeft -= 200;
+      myRef.current.scrollLeft -= 1000;
     }
     // document.getElementById("content").scrollLeft -= 800;
   };
   const scrollRight = () => {
     if (myRef.current != null) {
-      myRef.current.scrollLeft += 200;
+      myRef.current.scrollLeft += 1000;
     }
     // document.getElementById("content").scrollLeft += 800;
   };
@@ -64,7 +64,7 @@ export const HomeCarousalbt = () => {
           <div className="flex-row inline-flex bg-gray-700">
             {HomeCImages.map((CardData) => (
               <div
-                className="bg-gray-900 card hover:relative bottom-4 w-[400px] h-[400px] m-2 rounded-lg shadow-lg shadow-gray-700"
+                className="bg-gray-900 card hover:shadow-2xl bottom-4 w-[400px] h-[400px] m-2 rounded-lg shadow-lg shadow-gray-700"
                 key={CardData.id}
               >
                 <div className="top">

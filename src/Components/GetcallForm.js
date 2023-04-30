@@ -24,10 +24,10 @@ const GetcallForm = () => {
     });
   };
   return (
-    <div className="w-1/2 mx-auto pt-3">
+    <div className=" mt-10 mb-8 bg-white w-1/2 mx-auto pt-3">
       <div className=" bg-white py-4 px-8 flex flex-col mx-auto space-y-2">
         <div className="w-full flex space-x-2">
-          <div className="flex-1">
+          <div className="bg-white flex-1">
             <label className="leading-7 text-sm text-white" for="Product">
               Product
             </label>
@@ -104,7 +104,7 @@ const GetcallForm = () => {
             className="flex mx-auto text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg"
             type="button"
           >
-            Sign In
+            Submit Enquiry
           </button>
         </div>
       </div>

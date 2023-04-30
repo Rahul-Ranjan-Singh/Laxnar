@@ -22,6 +22,7 @@ const Productpage = () => {
   const [dropDownFace, setDropDownFace] = useState('Select Category');
   const [selectedcategory, setSelectedCategory] = useState("");
   const [categoryDropDown, setCategoryDropDown] = useState(false);
+  const [tempProductArray, setTempProductArray] = useState([])
 
   const fetchProducts = () => {
     fetch("https://laxnar-lko.onrender.com/api/product/get-products", {
@@ -30,7 +31,7 @@ const Productpage = () => {
 
     })
       .then((response) => response.json())
-      .then((result) => { setProducts(result.data); console.log(result.data); setIsLoading(false) })
+      .then((result) => { setProducts(result.data); setTempProductArray(result.data); console.log(result.data); setIsLoading(false) })
       .catch((error) => console.log("error", error));
 
 
@@ -62,6 +63,25 @@ const Productpage = () => {
     fetchProducts();
   }, []);
 
+  const filter = (categoryName) =>{
+    setTempProductArray(products)
+    console.log("resc")
+    // if(categoryName = "All_products"){
+    //   setTempProductArray(products);
+    //   return
+    // }
+    tempProductArray.filter((ele)=>{
+      // console.log(ele)
+      if(ele.category_name == categoryName){
+        console.log(ele)
+        return true;
+      }
+      else{
+        return false
+      }
+    })
+  }
+
   return (
     <>
       <PageIntroHeader PageName={"Products"} />
@@ -77,12 +97,22 @@ const Productpage = () => {
             < div id="dropdown" class="   bg-white divide-y divide-gray-100 rounded-lg shadow w-44 bg-gray-700">
               <ul class=" py-2 text-sm text-gray-200" aria-labelledby="dropdownDefaultButton">
 
-                <li onClick={(e) => { setSelectedCategory("All_products"); setCategoryDropDown(!categoryDropDown); setDropDownFace("All Products") }} class="block px-4 py-2  hover:bg-gray-600 hover:text-white">
+                <li onClick={(e) => { 
+                    setSelectedCategory("All_products");
+                    setCategoryDropDown(!categoryDropDown);
+                    setDropDownFace("All Products");
+                    filter("All_products"); 
+                  }} class="block px-4 py-2  hover:bg-gray-600 hover:text-white">
                   All Products
                 </li>
                 {
                   category.map((ele) => (
-                    <li onClick={(e) => { setSelectedCategory(ele.category_name); setCategoryDropDown(!categoryDropDown); setDropDownFace(ele.category_name) }} class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white">
+                    <li onClick={(e) => { 
+                        setSelectedCategory(ele.category_name); 
+                        setCategoryDropDown(!categoryDropDown); 
+                        setDropDownFace(ele.category_name);
+                        filter(ele.category_name);
+                      }} class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white">
                       <a >{ele.category_name}</a>
                     </li>
                   ))
@@ -138,7 +168,7 @@ const Productpage = () => {
               </svg>
             </div>
             :
-            products.map((product) => (
+            tempProductArray.map((product) => (
               <Link key={product._id} to={`/productdetails/${product._id}`}>
                 <ProductCard product={product} />
               </Link>

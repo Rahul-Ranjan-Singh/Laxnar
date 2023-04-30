@@ -2,7 +2,11 @@ import { Fragment, useState } from "react";
 import { NavLink } from "react-router-dom";
 import HamBurger from "../Icons/HamBurger";
 import { BsSearch } from "react-icons/bs";
+
+
+import { Link } from "react-router-dom";
 import logo from "../Images/laxnar_logo.jpg";
+
 
 const links = [
   { to: "/", label: "Home" },
@@ -102,12 +106,14 @@ const NavBar = () => {
             <img src={logo} className="h-8 mr-3" alt="Flowbite Logo" />
           </NavLink>
           <div class="flex md:order-2">
+          <Link to={`/admin}`}>
             <button
               type="button"
               class="text-white   focus:outline-none  font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 bg-red-600 hover:bg-red-700 focus:ring-red-800"
             >
               Admin Login
             </button>
+            </Link>
             <button
               onClick={() => setShowDropDown(!showDropDown)}
               data-collapse-toggle="navbar-sticky"

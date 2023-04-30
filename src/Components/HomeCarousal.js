@@ -37,7 +37,7 @@ function HomeCarousal() {
   };
 
   return (
-    <div className=" mt-24 max-sm:mt-30 md:mt-14 max-w-[1400px] h-screen w-full m-auto relative group">
+    <div className=" max-w-[1400px] h-screen w-full m-auto relative group">
       {/* <div
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
         className='w-full h-full  bg-center bg-cover duration-500' 
@@ -50,7 +50,7 @@ function HomeCarousal() {
 
       <div className="w-full h-full bg-center bg-gray-800 flex md:flex-row flex-col-reverse max-lg:align-middle max-lg:items-center max-sm:align-middle max-sm:items-center">
         <div className="w-2/5 h-full relative justify-center items-center">
-          <div className="mt-12 absolute text-white text-opacity-10 -z-1 font-bold text-4xl top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-3/4">
+          <div className="mt-16 absolute text-white text-opacity-10 -z-1 font-bold text-4xl top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-3/4">
             {slides[currentIndex].title}
           </div>
           <div className="md:mt-24 md:ml-20 p-20 flex-col items-center justify-evenly">
@@ -78,7 +78,7 @@ function HomeCarousal() {
               ></img>
             </div> */}
 
-            <div className="max-sm:mt-20 max-sm:mb-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <div className="max-sm:mt-20 max-sm:mb-5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <img
                 className="object-contain"
                 src={slides[currentIndex].url}
