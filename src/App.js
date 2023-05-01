@@ -43,7 +43,7 @@ function App() {
               <Route path="/productdetails/:id">
                 <ProductDetail />
               </Route>
-              <Route path="/getcall">
+              <Route path="/getcall/:name">
                 <GetCallPage />
               </Route>
               <Route path="/adminlogin">
