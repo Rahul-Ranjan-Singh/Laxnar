@@ -19,7 +19,7 @@ export const HomeImage = () => {
         <p className="mb-5  text-justify">
           We are Lucknow based elevator control panel manufacture and whole
           electrical kit supplier. Successfully delivering elevator control
-          panels north India since 2017. Our UPS are our product quality with
+          panels in north India since 2017. Our UPS is our product quality with
           solution support. We tend to keep our products easy to install and
           provide higher safety measures in our products. Providing important
           technical feature like password protected, easy handling, compact size
