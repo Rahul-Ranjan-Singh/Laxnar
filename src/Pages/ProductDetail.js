@@ -30,7 +30,7 @@ const ProductDetail = () => {
 
 
     const openGetCallPage = () => {
-        history.push("/getcall");
+        history.push(`/getcall/${sigleProduct.name}`);
     };
 
     return (
