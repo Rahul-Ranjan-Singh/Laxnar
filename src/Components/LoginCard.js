@@ -30,7 +30,7 @@ const LoginCard = () => {
 
     return (
         <div className='flex flex-col items-center justify-center min-h-screen bg-blue-100'>
-            <div className='max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700'>
+            <div className='max-w-sm p-6 border rounded-lg shadow bg-gray-800 border-gray-700'>
                 <h2 className='text-2xl font-bold text-center w-full text-white mb-6'>Admin Login</h2>
                 <form onSubmit={handleLogin}>
                     <div className='mb-4'>
