@@ -24,6 +24,7 @@ const ProductDetail = () => {
 
     useEffect(() => {
         fetchProducts();
+        window.scrollTo(0, 0);
     }, []);
 
     const openGetCallPage = () => {

@@ -1,18 +1,7 @@
 import PageIntroHeader from "../Components/PageIntroHeader";
-import { GoTriangleDown } from "react-icons/go";
 import ProductCard from "../Components/ProductCard";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
-
-const sideMenuOptions = [
-    { option: "ARCUBE" },
-    { option: "Lift Controller Cards" },
-    { option: "ARCODE (Intregated Lift Control Unit)" },
-    { option: "ARKEL IoT" },
-    { option: "ADrive VVVF Inverter" },
-    { option: "ARKEL IoT" },
-];
 
 const Productpage = () => {
     const [products, setProducts] = useState([]);
@@ -26,7 +15,6 @@ const Productpage = () => {
 
     const fetchProducts = () => {
         fetch("https://laxnar-lko.onrender.com/api/product/get-products", {
-            // mode: 'no-cors',
             method: "GET",
         })
             .then((response) => response.json())
@@ -39,7 +27,6 @@ const Productpage = () => {
             .catch((error) => console.log("error", error));
 
         fetch("https://laxnar-lko.onrender.com/api/category/get-category", {
-            // mode: 'no-cors',
             method: "GET",
         })
             .then((response) => response.json())
@@ -49,17 +36,6 @@ const Productpage = () => {
                 setIfCategoryLoading(false);
             })
             .catch((error) => console.log("error", error));
-
-        // fetch("https://laxnar-lko.onrender.com/api/product/get-product/643a350a6129b3c72d334a2d", {
-        //     // mode: 'no-cors',
-        //     method: "GET",
-        // })
-        //     .then((response) => response.json())
-        //     .then((result) => {
-        //         console.log("iii");
-        //         console.log(result.data);
-        //     })
-        //     .catch((error) => console.log("error", error));
     };
 
     useEffect(() => {
@@ -67,13 +43,10 @@ const Productpage = () => {
     }, []);
 
     const filter = (categoryName) => {
+        setProducts([]);
         setIsLoading(true);
-        fetch("https://laxnar-lko.onrender.com/api/product/product-category", {
-            // mode: 'no-cors',
+        fetch(`https://laxnar-lko.onrender.com/api/product/product-category/${categoryName}`, {
             method: "GET",
-            body: {
-                category: categoryName,
-            },
         })
             .then((response) => response.json())
             .then((result) => {
@@ -82,21 +55,10 @@ const Productpage = () => {
                 setIsLoading(false);
             })
             .catch((error) => console.log("error", error));
-        setTempProductArray(products);
-        console.log("resc");
-        // if(categoryName = "All_products"){
-        //   setTempProductArray(products);
-        //   return
-        // }
-        tempProductArray.filter((ele) => {
-            // console.log(ele)
-            if (ele.category_name === categoryName) {
-                console.log(ele);
-                return true;
-            } else {
-                return false;
-            }
-        });
+    };
+
+    const reloadFuction = () => {
+        window.location.reload(true);
     };
 
     return (
@@ -133,7 +95,7 @@ const Productpage = () => {
                                         setSelectedCategory("All_products");
                                         setCategoryDropDown(!categoryDropDown);
                                         setDropDownFace("All Products");
-                                        filter("All_products");
+                                        reloadFuction();
                                     }}
                                     class='block px-4 py-2  hover:bg-gray-600 hover:text-white'
                                 >
@@ -190,8 +152,43 @@ const Productpage = () => {
                         </div>
                     ) : (
                         <ol className='w-full'>
+                            <div
+                                className='w-full flex justify-between p-4 border-b border-gray-600 cursor-pointer'
+                                onClick={(e) => {
+                                    setSelectedCategory("All_products");
+                                    setCategoryDropDown(!categoryDropDown);
+                                    setDropDownFace("All Products");
+                                    reloadFuction();
+                                }}
+                            >
+                                <div className='font-semibold text-gray-500'>All Products</div>
+                                <div className='w-1/4 h-full  flex justify-center align-middle items-end'>
+                                    <svg
+                                        class='inline w-4 h-4'
+                                        xmlns='http://www.w3.org/2000/svg'
+                                        enable-background='new 0 0 128 128'
+                                        viewBox='0 0 128 128'
+                                        id='filter'
+                                    >
+                                        <path
+                                            fill='#808080'
+                                            d='M126.6,13.6v7.8L77.3,70.7v27.2l-26.5,19.2V70.7L1.4,21.4v-7.8c0-1.5,1.2-2.7,2.7-2.7h119.7
+                  C125.3,10.9,126.6,12.1,126.6,13.6z'
+                                        ></path>
+                                    </svg>
+                                </div>
+                            </div>
+
                             {category.map((c) => (
-                                <div className='w-full flex justify-between p-4 border-b border-gray-600'>
+                                <div
+                                    className='w-full flex justify-between p-4 border-b border-gray-600 cursor-pointer'
+                                    onClick={(e) => {
+                                        setSelectedCategory(c.category_name);
+                                        setCategoryDropDown(!categoryDropDown);
+                                        setDropDownFace(c.category_name);
+                                        filter(c.category_name);
+                                    }}
+                                >
                                     <div className='font-semibold text-gray-500'>{c.category_name}</div>
                                     <div className='w-1/4 h-full  flex justify-center align-middle items-end'>
                                         <svg
@@ -236,7 +233,7 @@ const Productpage = () => {
                             </svg>
                         </div>
                     ) : (
-                        tempProductArray.map((product) => (
+                        products.map((product) => (
                             <Link key={product._id} to={`/productdetails/${product._id}`}>
                                 <ProductCard product={product} />
                             </Link>
