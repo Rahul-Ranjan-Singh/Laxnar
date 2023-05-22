@@ -102,18 +102,16 @@ const Productpage = () => {
                                     All Products
                                 </li>
                                 {category.map((ele) => (
-                                    <li class='block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white'>
+                                    <li
+                                        onClick={(e) => {
+                                            setSelectedCategory(ele.category_name);
+                                            setCategoryDropDown(!categoryDropDown);
+                                            setDropDownFace(ele.category_name);
+                                            filter(ele.category_name);
+                                        }}
+                                        class='block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white'
+                                    >
                                         <a>{ele.category_name}</a>
-                                        <button
-                                            onClick={(e) => {
-                                                setSelectedCategory(ele.category_name);
-                                                setCategoryDropDown(!categoryDropDown);
-                                                setDropDownFace(ele.category_name);
-                                                filter(ele.category_name);
-                                            }}
-                                        >
-                                            Hey hello
-                                        </button>
                                     </li>
                                 ))}
                             </ul>
@@ -232,6 +230,8 @@ const Productpage = () => {
                                 />
                             </svg>
                         </div>
+                    ) : products.length === 0 ? (
+                        <span className='text-gray-500'>No Products Available from the category</span>
                     ) : (
                         products.map((product) => (
                             <Link key={product._id} to={`/productdetails/${product._id}`}>

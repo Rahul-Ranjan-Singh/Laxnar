@@ -101,9 +101,18 @@ const CreateProductCard = () => {
     newFormData.append("description", formData.description);
     newFormData.append("image", file);
     newFormData.append("category", formData.category);
-    newFormData.append("applications", formData.applications);
-    newFormData.append("technical_features", formData.techicalFeatures);
-    newFormData.append("advantages", formData.Advantages);
+    formData.applications.map((application, ind) => {
+      newFormData.append("applications", application);
+    })
+    formData.techicalFeatures.map((feature, ind) => {
+      newFormData.append("technical_features", feature);
+    })
+    formData.Advantages.map((advantage, ind) => {
+      newFormData.append("advantages", advantage);
+    })
+    // newFormData.append("applications", formData.applications);
+    // newFormData.append("technical_features", formData.techicalFeatures);
+    // newFormData.append("advantages", formData.Advantages);
 
     axios({
       url: "https://laxnar-lko.onrender.com/api/product/add-product",

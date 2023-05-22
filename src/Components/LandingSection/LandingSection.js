@@ -35,8 +35,8 @@ const LandingSection = () => {
                         "
                         src="https://arkel.b-cdn.net/Content/Images/triangle-01.svg" alt =""></img>
                 </div> */}
-                    <div className=' absolute w-1/3 right-20 top-1/3'>
-                        <p className='font-semibold sm:text-lg md:text-4xl mt-5 text-white'>
+                    <div className=' absolute w-1/3 md:right-20 right-14 top-1/3'>
+                        <p className='font-semibold text-xs md:text-2xl mt-5 text-white'>
                             <Typical
                                 steps={[
                                     "Building Trust through Quality solutions and Exceptional Technologies",

@@ -8,7 +8,7 @@ const HomeResearch = () => {
                 <a class='shadow-2xl flex flex-col items-center border rounded-lg shadow md:flex-row w-2/3 max-sm:w-72 border-gray-700  bg-gray-900 '>
                     <img
                         class='object-cover w-full rounded-t-lg h-96 md:max-h-full max-w-xl md:rounded-none md:rounded-l-lg'
-                        src={Research}
+                        src='https://media.istockphoto.com/id/1406039093/photo/close-up-of-the-elevator-call-buttons-up-and-down-with-braille-arrow-of-the-elevator-shows.jpg?b=1&s=170667a&w=0&k=20&c=AMulKRsLYsn8a4tyrgcWoaCT2Kq6qa6P22t8cYp0K1o='
                         alt='Research JPG'
                     />
                     <div class='flex flex-col justify-between p-4 leading-normal'>
