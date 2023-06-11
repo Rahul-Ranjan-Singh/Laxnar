@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Sidebar from '../partials/Sidebar';
 import Header from '../partials/Header';
@@ -8,12 +8,34 @@ import Datepicker from '../partials/actions/Datepicker';
 import DashboardCard01 from '../partials/dashboard/DashboardCard01';
 import DashboardCard10 from '../partials/dashboard/DashboardCard10';
 import CreateProductCard from '../partials/dashboard/CreateProductCard';
+import InquireyCard from '../partials/dashboard/InquireyCard';
 
 
 
 function Dashboard() {
 
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [inquires, setInquires] = useState([]);
+  const [loading, setIsLoading] = useState(false);
+  const fetchInquirey = () => {
+    setIsLoading(true);
+    fetch("https://laxnar-lko.onrender.com/api/support/enquiry/all", {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        setInquires(result.EnquiryResult);
+
+        console.log(result.EnquiryResult);
+        setIsLoading(false);
+      })
+      .catch((error) => console.log("error", error));
+  };
+
+  useEffect(() => {
+    fetchInquirey();
+  }, []);
+
 
   return (
     <div className="flex h-screen overflow-hidden">
@@ -62,6 +84,12 @@ function Dashboard() {
               <DashboardCard01 />
               <DashboardCard10 />
               <CreateProductCard />
+              {
+                loading ? <div>Loading Enquires...</div>
+                  :
+                  <InquireyCard details={inquires} />
+              }
+
 
             </div>
 

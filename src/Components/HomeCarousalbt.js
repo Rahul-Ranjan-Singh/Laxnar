@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router";
+import Fade from "react-reveal/Fade";
 import { Link } from "react-router-dom";
 
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
@@ -113,24 +114,26 @@ export const HomeCarousalbt = () => {
                             </div>
                         ) : (
                             products.map((product, ind) => (
-                                <Link key={product._id} to={`/productdetails/${product._id}`}>
-                                    <div
-                                        className='bg-gray-900 card hover:shadow-2xl bottom-4 w-[400px] h-[400px] m-2 rounded-lg shadow-lg shadow-gray-700'
-                                        key={ind}
-                                    >
-                                        <div className='top'>
-                                            <img className='w-full h-[200px] object-cover  p-2' src={product.image[0]} alt='img' />
-                                        </div>
-                                        <div className='px-7 bottom flex flex-col justify-center items-start p-3'>
-                                            <div className='title font-semibold text-white text-lg my-1'>{product.name}</div>
-                                            <div className='my-2'>
-                                                <button className='px-3 py-1 text-sm text-white bg-red-600 hover:bg-red-800 rounded-lg mr-1 '>
-                                                    View
-                                                </button>
+                                <Fade bottom>
+                                    <Link key={product._id} to={`/productdetails/${product._id}`}>
+                                        <div
+                                            className='bg-gray-900 card hover:shadow-2xl bottom-4 w-[400px] h-[400px] m-2 rounded-lg shadow-lg shadow-gray-700'
+                                            key={ind}
+                                        >
+                                            <div className='top'>
+                                                <img className='w-full h-[200px] object-cover  p-2' src={product.image[0]} alt='img' />
+                                            </div>
+                                            <div className='px-7 bottom flex flex-col justify-center items-start p-3'>
+                                                <div className='title font-semibold text-white text-lg my-1'>{product.name}</div>
+                                                <div className='my-2'>
+                                                    <button className='px-3 py-1 text-sm text-white bg-red-600 hover:bg-red-800 rounded-lg mr-1 '>
+                                                        View
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </Link>
+                                    </Link>
+                                </Fade>
                             ))
                         )}
                     </div>

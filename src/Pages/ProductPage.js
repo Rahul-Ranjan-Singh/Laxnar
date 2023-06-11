@@ -1,6 +1,7 @@
 import PageIntroHeader from "../Components/PageIntroHeader";
 import ProductCard from "../Components/ProductCard";
 import { useEffect, useState } from "react";
+import Fade from "react-reveal/Fade";
 import { Link } from "react-router-dom";
 
 const Productpage = () => {
@@ -235,7 +236,9 @@ const Productpage = () => {
                     ) : (
                         products.map((product) => (
                             <Link key={product._id} to={`/productdetails/${product._id}`}>
-                                <ProductCard product={product} />
+                                <Fade bottom>
+                                    <ProductCard product={product} />
+                                </Fade>
                             </Link>
                         ))
                     )}
