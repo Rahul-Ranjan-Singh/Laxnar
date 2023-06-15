@@ -31,7 +31,7 @@ const Map = () => {
           <iframe
             className="w-screen h-80"
             id="gmap_canvas"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.7972160969766!2d77.34686077452727!3d28.665789882571342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfb2b932cde47%3A0xbc906b4d493ca05d!2sPOWER%20PULSE!5e0!3m2!1sen!2sin!4v1686807612383!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d421.06922796917746!2d77.34887094203378!3d28.665700621460584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfbf5f50569db%3A0x7854c2eaecb1f830!2sLAXNAR-LAXMI%20NARYAN%20ENTERPRISES!5e0!3m2!1sen!2sin!4v1686816914357!5m2!1sen!2sin"
             frameborder="0"
             scrolling="no"
             marginheight="0"
