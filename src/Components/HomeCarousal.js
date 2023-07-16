@@ -18,7 +18,7 @@ function HomeCarousal() {
   const [currentIndex, setCurrentIndex] = useState(0);
   setTimeout(() => {
     nextSlide();
-  }, 2000);
+  }, 6000);
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
