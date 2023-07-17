@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Homeimage from "../Images/Homeimage.jpg";
+import Homeimage from "../Images/Homeimage.png";
 export const HomeImage = () => {
   return (
     <div className="px-12 border-t border-gray-500 py-12 font-sans bg-white flex-col md:flex-row inline-flex justify-around">
-      <div className="">
+      <div className=" p-4 ">
         <img className="rounded-md" src={Homeimage} alt="Image" />
       </div>
       <div className=" relative  p-3 rounded-3xl">
@@ -22,9 +22,9 @@ export const HomeImage = () => {
           panels in north India since 2017. Our USP is our product quality with
           solution support. We tend to keep our products easy to install and
           provide higher safety measures in our products. Providing important
-          technical feature like password protected, easy handling, compact size
-          panels, pre-installed parameters, safety measures, on call service, at
-          site service (if required).
+          technical feature like password protection, easy handling, compact
+          size panels, pre-installed parameters, safety measures, on call
+          service, at site service (if required).
         </p>
         <NavLink to="/about">
           <button className="mb-5 float-right text-white  focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 bg-red-600 hover:bg-red-700 focus:ring-red-800">
