@@ -75,7 +75,7 @@ const Productpage = () => {
             onClick={(e) => setCategoryDropDown(!categoryDropDown)}
             id="dropdownDefaultButton"
             data-dropdown-toggle="dropdown"
-            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
+            class="text-white bg-red-700  focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center "
             type="button"
           >
             {dropDownFace}
@@ -135,7 +135,7 @@ const Productpage = () => {
         </div>
       </div>
 
-      <div className="border-t border-gray-600 max-sm:px-5 px-28 flex flex-row bg-gray-700">
+      <div className="border-t border-gray-600 max-sm:px-5 px-28 flex flex-row bg-gray-50">
         <div
           className={
             ifCategoryLoading
@@ -226,9 +226,9 @@ const Productpage = () => {
           )}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-1 max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 flex-1 m-4 drop-shadow-2xl w-1/2 bg-white bg-gray-800 p-10 rounded-lg">
+        <div className="grid grid-cols-1 sm:grid-cols-1 max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 flex-1 m-4 drop-shadow-2xl w-1/2  bg-gray-800 p-10 rounded-lg">
           {isLoading ? (
-            <div className="mx-auto h-full w-full items-center flex justify-center align-middle ">
+            <div className="mx-auto h-full w-full items-center flex justify-center align-middle bg-gray-100 ">
               <svg
                 aria-hidden="true"
                 role="status"
