@@ -2,7 +2,9 @@ import { Fragment, useState } from "react";
 import { NavLink } from "react-router-dom";
 import HamBurger from "../Icons/HamBurger";
 import { BsSearch } from "react-icons/bs";
-import logo from "../Images/laxnar_logo.jpg";
+
+import { Link } from "react-router-dom";
+import logo from "../Images/logo2.png";
 
 const links = [
   { to: "/", label: "Home" },
@@ -17,13 +19,13 @@ const NavBar = () => {
 
   function NavDropDown() {
     return (
-      <div className="mt-16">
+      <div className=" fixed w-full z-20 left-0 border-b">
         <ol class="border border-gray-800 absolute w-full bg-gray-900 p-3 shadow-lg rounded-b-2xl z-20">
           {links.map((link) => (
             <li>
               <NavLink
                 className="h-11 px-5 w-full rounded-lg align-middle  border hover:bg-blue-700  text-white border-gray-900 left-0 font-medium mt-1  py-1 flex justify-between p-4"
-                onClick={()=>setShowDropDown(!showDropDown)}
+                onClick={() => setShowDropDown(!showDropDown)}
                 to={link.to}
               >
                 {link.label}
@@ -96,18 +98,21 @@ const NavBar = () => {
         <NavDropDown />
       </div> */}
 
-      <nav class="bg-gray-900 fixed w-full z-20 top-0 left-0 border-b  border-gray-600">
+      <nav class="bg-gray-800 fixed w-full z-20 top-0 left-0 ">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <NavLink to="/">
-            <img src={logo} className="h-8 mr-3" alt="Flowbite Logo" />
+            <img src={logo} className="h-6 mx-3" alt="Flowbite Logo" />
           </NavLink>
           <div class="flex md:order-2">
-            <button
-              type="button"
-              class="text-white   focus:outline-none  font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 bg-red-600 hover:bg-red-700 focus:ring-red-800"
-            >
-              Admin Login
-            </button>
+            <NavLink to="/adminlogin">
+              <button
+                type="button"
+                class="text-white   focus:outline-none  font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 bg-red-600 hover:bg-red-700 focus:ring-red-800"
+                onClick={(e) => setShowDropDown(false)}
+              >
+                Admin Login
+              </button>
+            </NavLink>
             <button
               onClick={() => setShowDropDown(!showDropDown)}
               data-collapse-toggle="navbar-sticky"
@@ -136,11 +141,11 @@ const NavBar = () => {
             class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
             id="navbar-sticky"
           >
-            <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border  rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:border-0  bg-gray-800 md:bg-gray-900 border-gray-700">
+            <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border  rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:border-0 ">
               {links.map((link) => (
                 <li>
                   <NavLink
-                    className="block py-2 pl-3 pr-4  rounded hover:bg-gray-100   md:p-0 text-white  hover:text-white md:hover:bg-transparent border-gray-700"
+                    className="block py-2 pl-3 pr-4  rounded hover:underline    md:p-0 text-white  hover:text-white md:hover:bg-transparent "
                     to={link.to}
                   >
                     {link.label}
