@@ -228,7 +228,7 @@ const Productpage = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-1 max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 flex-1 m-4 drop-shadow-2xl w-1/2  bg-gray-800 p-10 rounded-lg">
           {isLoading ? (
-            <div className="mx-auto h-full w-full items-center flex justify-center align-middle bg-gray-100 ">
+            <div className="mx-auto h-full w-full items-center flex justify-center align-middle ">
               <svg
                 aria-hidden="true"
                 role="status"

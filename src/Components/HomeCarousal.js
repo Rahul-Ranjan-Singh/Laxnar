@@ -10,9 +10,6 @@ function HomeCarousal() {
     {
       url: "https://firebasestorage.googleapis.com/v0/b/laxnar-8b7aa.appspot.com/o/Graphics_webp%2F3.webp?alt=media&token=fab3f2e6-a605-493c-8711-1302b0c6c7f5",
     },
-    {
-      url: "https://firebasestorage.googleapis.com/v0/b/laxnar-8b7aa.appspot.com/o/Graphics_webp%2F1.webp?alt=media&token=2426c413-2b7b-4418-bcab-9e327924a208",
-    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
